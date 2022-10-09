@@ -6,11 +6,9 @@ pipx run itisi NobleMathews
 
 A wayback? still work in progress ;D
 """
-
-import shlex
+import os
 
 import typer
-import subprocess
 
 app = typer.Typer()
 
@@ -27,8 +25,9 @@ def cli(
         script_name: str = typer.Option("main.sh", help="Script name if custom")
 ) -> None:
     """CLI interface"""
-    command = f"bash -c '$(wget https://raw.github.com/{github_id}/{repo_name}/master/{script_name} -O -)'"
-    subprocess.run(shlex.split(command))
+
+    command = f"wget -O - https://raw.githubusercontent.com/{github_id}/{repo_name}/master/{script_name} | bash"
+    os.system(command)
 
 
 def reset():
