@@ -6,7 +6,7 @@ apt-get update && apt-get install -y sudo git
 git config --global --add safe.directory '*'
 fi
 # Install ZSH and make it default
-sudo apt-get install -y git curl zsh tmux
+sudo apt-get install -y git curl zsh tmux notify-send
 chsh -s /usr/bin/zsh
 # Install oh-my-zsh
 yes | sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
@@ -20,6 +20,14 @@ chmod +x ~/miniconda.sh
 ~/miniconda.sh -b
 source ~/miniconda3/bin/activate
 conda init zsh
+# tmux setup - needs GUI?
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# echo "set -g @plugin 'ChanderG/tmux-notify'" > ~/.tmux.conf
+# echo "set -g @tnotify-verbose 'on'" >> ~/.tmux.conf
+# echo "if \"test ! -d ~/.tmux/plugins/tpm\" \
+#    \"run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'" >> ~/.tmux.conf
+# echo "run '~/.tmux/plugins/tpm/tpm'" >> ~/.tmux.conf
+# tmux source ~/.tmux.conf
 # Git SSH Auth
 mkdir ~/.ssh
 yes "" | ssh-keygen -t ed25519 -C "55821103+NobleMathews@users.noreply.github.com" -N "" >&- 2>&-
