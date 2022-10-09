@@ -27,7 +27,7 @@ def cli(
         script_name: str = typer.Option("main.sh", help="Script name if custom")
 ) -> None:
     """CLI interface"""
-    command = f"sh -c '$(curl -fsSL https://raw.github.com/{github_id}/{repo_name}/master/{script_name})'"
+    command = f"bash -c '$(wget https://raw.github.com/{github_id}/{repo_name}/master/{script_name} -O -)'"
     subprocess.run(shlex.split(command))
 
 
