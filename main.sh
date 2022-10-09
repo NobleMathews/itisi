@@ -1,4 +1,3 @@
-#!/bin/bash
 if ! type "sudo" > /dev/null; then
 # Get SUDO in docker root
 apt-get update && apt-get install -y sudo git
