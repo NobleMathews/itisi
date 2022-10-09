@@ -29,4 +29,4 @@ clear
 echo "Copy key below into https://github.com/settings/keys as an SSH Key make sure to remove once it is not required anymore!"
 cat ~/.ssh/id_ed25519.pub
 #source ~/.zshrc
-zsh
+/usr/bin/zsh
