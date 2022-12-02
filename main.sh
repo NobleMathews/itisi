@@ -6,7 +6,7 @@ apt-get update && apt-get install -y sudo git
 git config --global --add safe.directory '*'
 fi
 # Install ZSH and make it default
-sudo apt-get install -y git curl zsh tmux notify-send
+sudo apt-get install -y git curl zsh tmux
 chsh -s /usr/bin/zsh
 # Install oh-my-zsh
 yes | sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
